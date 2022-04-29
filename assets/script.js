@@ -1,4 +1,11 @@
 class Calculator  {
+    a;
+    b;
+    constructor( a, b ) {
+        this.a = a;
+        this.b = b;
+    }
+
     static multiplication ( a, b ) {
         return a * b;
     }
@@ -79,11 +86,6 @@ let firstNumElem = document.getElementById("calculator__first-num");
 let secondNumElem = document.getElementById("calculator__second-num");
 let resultElem = document.getElementById("calculator__result");
 
-// let firstNumVal = firstNumElem.value;
-// let secondNumVal = secondNumElem.value;
-// let resultVal = 
-
-
 let errorMessageBlock = document.getElementById("errorMessages");
 errorMessageBlock.style.display = "none";
 
@@ -106,25 +108,29 @@ divisionButton.addEventListener("click", checkDivision);
 sumButton.addEventListener("click", (event) => {
     // если нет ошибок при заполнении
     if ( !errorMessages.length ) {
-        resultElem.value = Calculator.addition(Number(firstNumElem.value), Number(secondNumElem.value) );
+        const calc = new Calculator( Number(firstNumElem.value), Number(secondNumElem.value));
+        resultElem.value = Calculator.addition(calc.a, calc.b);
     }
 });
 
 subtrButton.addEventListener("click", (event) => {
     if ( !errorMessages.length ) {
-        resultElem.value = Calculator.subtraction(Number(firstNumElem.value), Number(secondNumElem.value));    
+        const calc = new Calculator( Number(firstNumElem.value), Number(secondNumElem.value));
+        resultElem.value = Calculator.subtraction(calc.a, calc.b);    
     }
 });
 
 divisionButton.addEventListener("click", (event) => {
     if ( !errorMessages.length ) {
-        resultElem.value = Calculator.division(Number(firstNumElem.value), Number(secondNumElem.value));
+        const calc = new Calculator( Number(firstNumElem.value), Number(secondNumElem.value));
+        resultElem.value = Calculator.division(calc.a, calc.b);    
     }
 });
 
 multButton.addEventListener( "click", (event) => {
     if ( !errorMessages.length ) {
-        resultElem.value = Calculator.multiplication(Number(firstNumElem.value), Number(secondNumElem.value));
+        const calc = new Calculator( Number(firstNumElem.value), Number(secondNumElem.value));
+        resultElem.value = Calculator.multiplication(calc.a, calc.b);    
     }        
 });
 
