@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculator, week 19</h1>
+        <div class="calculator__nums">
+            <input type="number" class="calculator__first-num" id="calculator__first-num" pattern="^\d+$" required>
+            <input type="number" class="calculator__second-num" id="calculator__second-num" pattern="^\d+$" required>
+        </div>
+        <div class="calculator__btns">
+            <input type="button" class="calculator__btn" id="sum" value=" + ">
+            <input type="button" class="calculator__btn" id="subtr" value=" - ">
+            <input type="button" class="calculator__btn" id="mult" value=" * ">
+            <input type="button" class="calculator__btn" id="division" value=" / ">
+            <input type="button" class="calculator__btn" value=" C " onclick="clearCalc()">
+        </div>
+        <!-- here we will show error messages if smth is wrong -->
+        <div class="calculator__error-messages" id="errorMessages">
+            
+        </div>
+        
+        <input type="text" class="calculator__result" id="calculator__result" value="">
+        
+
+    </div>
+
+    <div class="updates">
+        <h2>Что изменилось в этой версии калькулятора:</h2>
+        <ul>
+            <li>поля для ввода чисел теперь type="number"</li>
+            <li>к ним добавлен pattern="^\d+$" в html</li>
+            <li>они стали required</li>
+            <li>немного изменена очистка ошибок (теперь ошибки не копятся при повторных нажатиях на кнопки действий)</li>
+            <li>валидация теперь на основе htlm5+js</li>
+            <li>добавлен класс Calculator, вычисления теперь ведутся с помощью его статических методов</li>
+        </ul>
+    </div>
+
+
+    <script src="./assets/script.js"></script>
+</body>
+</html> 

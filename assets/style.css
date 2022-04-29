@@ -1,0 +1,27 @@
+h1 {
+    margin-top: 0;
+}
+
+div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.calculator {
+    border: 3px rgb(148, 146, 146) solid;
+    padding: 10px 10px 10px 10px;
+    width: 400px;
+    display: grid;
+    justify-content: center;
+}
+
+.calculator__btns {
+    display: grid;
+    justify-content: center;
+    grid-auto-flow: column;
+}
+
+.calculator__error-messages {
+    border: 2px solid pink;
+    color: rgb(242, 119, 139);
+}
